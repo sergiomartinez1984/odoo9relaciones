@@ -1,0 +1,412 @@
+<odoo>
+  <data>
+    <!-- VISTA VIDEOJUEGOS -->
+    
+     <record model="ir.ui.view" id="odoo704.videojuego_list_view">
+      <field name="name">odoo704.videojuego.view.tree</field>
+      <field name="model">odoo704.videojuego</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="titulo"/>
+          <field name="descripcion" />
+          <field name="creador_videojuego_id" />
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo704.videojuego_search_view">
+      <field name="name">odoo704.videojuego.view.search</field>
+      <field name="model">odoo704.videojuego</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="titulo"/>
+          <field name="descripcion" />
+          <field name="creador_videojuego_id" />
+          <group>
+            <filter name="group_by_name" string="name" context="{'gropup_by':'name'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo704.videojuego_form_view">
+      <field name="name">odoo704.videojuego.view.form</field>
+      <field name="model">odoo704.videojuego</field>
+      <field name="arch" type="xml">
+        <form string="Información videojuego">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="titulo" placeholder="titulo"/>
+                <field name="descripcion" placeholder="descripcion"/>
+                <field name="creador_videojuego_id" placeholder="creador_videojuego_id"/>
+
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+    <!-- VISTA CREADOR -->
+    
+     <record model="ir.ui.view" id="odoo704.creador_list_view">
+      <field name="name">odoo704.creador.view.tree</field>
+      <field name="model">odoo704.creador</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="apellidos" />
+
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo704.creador_search_view">
+      <field name="name">odoo704.creador.view.search</field>
+      <field name="model">odoo704.creador</field>
+      <field name="arch" type="xml">
+        <search>
+           <field name="name"/>
+          <field name="nombre"/>
+          <field name="apellidos" />
+          <group>
+            <filter name="group_by_name" string="name" context="{'gropup_by':'name'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo704.creador_form_view">
+      <field name="name">odoo704.creador.view.form</field>
+      <field name="model">odoo704.creador</field>
+      <field name="arch" type="xml">
+        <form string="Información creador">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre" placeholder="nombre"/>
+                <field name="apellidos" placeholder="apellidos"/>
+
+
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+ 
+
+
+    <!-- VISTA PERSONAJE -->
+    
+     <record model="ir.ui.view" id="odoo704.personaje_list_view">
+      <field name="name">odoo704.personaje.view.tree</field>
+      <field name="model">odoo704.personaje</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="apellidos" />
+          <field name="videojuego_personaje_id" />
+
+          
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo704.personaje_search_view">
+      <field name="name">odoo704.personaje.view.search</field>
+      <field name="model">odoo704.personaje</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="apellidos" />
+          <field name="videojuego_personaje_id" />
+
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo704.personaje_form_view">
+      <field name="name">odoo704.personaje.view.form</field>
+      <field name="model">odoo704.personaje</field>
+      <field name="arch" type="xml">
+        <form string="Información personaje">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre" placeholder="Nombre"/>
+                <field name="apellidos" placeholder="Apellidos"/>
+                <field name="videojuego_personaje_id" placeholder="videojuego_personaje_id"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+    <!-- VISTA COMPAÑIA -->
+    
+     <record model="ir.ui.view" id="odoo704.compania_list_view">
+      <field name="name">odoo704.compania.view.tree</field>
+      <field name="model">odoo704.compania</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="direccion" />
+          <field name="compania_videojuego_ids" />
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo704.compania_search_view">
+      <field name="name">odoo704.compania.view.search</field>
+      <field name="model">odoo704.compania</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="direccion" />
+          <field name="compania_videojuego_ids" />
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo704.compania_form_view">
+      <field name="name">odoo704.compania.view.form</field>
+      <field name="model">odoo704.compania</field>
+      <field name="arch" type="xml">
+        <form string="Información compania">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre" placeholder="Nombre"/>
+                <field name="direccion" placeholder="Direccion"/>
+                <field name="compania_videojuego_ids" placeholder="compania_videojuego_ids"/>
+
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+    <!-- VISTA FRASES-->
+    
+     <record model="ir.ui.view" id="odoo704.personaje_frases_list_view">
+      <field name="name">odoo704.personaje_frases.view.tree</field>
+      <field name="model">odoo704.personaje_frases</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="frase"/>
+          <field name="frases_personaje_ids" />
+          <field name="id_personaje" />
+
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo704.personaje_frases_search_view">
+      <field name="name">odoo704.personaje_frases.view.search</field>
+      <field name="model">odoo704.personaje_frases</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="frase"/>
+          <field name="frases_personaje_ids" />
+          <field name="id_personaje" />
+
+          <group>
+            <filter name="group_by_frase" string="frase" context="{'gropup_by':'frase'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo704.personaje_frases_form_view">
+      <field name="name">odoo704.personaje_frases.view.form</field>
+      <field name="model">odoo704.personaje_frases</field>
+      <field name="arch" type="xml">
+        <form string="Información frases">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Frase <field name="name" placeholder="Frase"/>
+
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="frase" placeholder="Frase"/>
+                <field name="frases_personaje_ids" placeholder="frases_personajer_ids"/>
+
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+
+
+
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+<!-- VIDEOJUEGO-->
+    <record model="ir.actions.act_window" id="odoo704.videojuego_action_window">
+      <field name="name">pelicula</field>
+      <field name="res_model">odoo704.videojuego</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+<!-- MOSTRAR VIDEOJUEGO-->
+    <menuitem name="odoo704" id="odoo704.menu_root"/>
+    <menuitem name="VIDEOJUEGO" id="odoo704.menu_videojuego" parent="odoo704.menu_root"/>
+    <menuitem name="Mostrar videojuegos" id="odoo704.menu_videojuego_list" parent="odoo704.menu_videojuego"
+              action="odoo704.videojuego_action_window"/>
+
+
+
+<!-- CREADOR-->
+    <record model="ir.actions.act_window" id="odoo704.creador_action_window">
+      <field name="name">creador</field>
+      <field name="res_model">odoo704.creador</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+<!-- MOSTRAR CREADOR CON VIDEOJUEGO-->
+    <menuitem name="odoo704" id="odoo704.menu_root"/>
+    <menuitem name="creador" id="odoo704.menu_creador" parent="odoo704.menu_root"/>
+    <menuitem name="Mostrar creador" id="odoo704.menu_creador_list" parent="odoo704.menu_videojuego"
+              action="odoo704.creador_action_window"/>
+
+    
+<!--PERSONAJE -->
+    <record model="ir.actions.act_window" id="odoo704.personaje_action_window">
+      <field name="name">personaje</field>
+      <field name="res_model">odoo704.personaje</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+<!--LISTA PERSONAJE SOLO-->
+    <menuitem name="odoo704" id="odoo704.menu_root"/>
+    <menuitem name="PERSONAJE" id="odoo704.menu_personaje" parent="odoo704.menu_root"/>
+    <menuitem name="Aniadir un personaje" id="odoo704.menu_personaje_list" parent="odoo704.menu_personaje"
+              action="odoo704.personaje_action_window"/>
+
+
+<!--FRASE -->
+    <record model="ir.actions.act_window" id="odoo704.personaje_frases_action_window">
+      <field name="name">frase</field>
+      <field name="res_model">odoo704.personaje_frases</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+<!--LISTA FRASE CON PERSONAJE -->
+    <menuitem name="odoo704" id="odoo704.menu_root"/>
+    <menuitem name="Aniadir una frase" id="odoo704.menu_personaje_frases_list" parent="odoo704.menu_personaje"
+              action="odoo704.personaje_frases_action_window"/>
+
+ 
+<!--COMPAÑIA -->
+    <record model="ir.actions.act_window" id="odoo704.compania_action_window">
+      <field name="name">compania</field>
+      <field name="res_model">odoo704.compania</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+<!--LISTA COMPAÑIA SOLO-->
+    <menuitem name="odoo704" id="odoo704.menu_root"/>
+    <menuitem name="COMPAÑIA" id="odoo704.menu_compania" parent="odoo704.menu_root"/>
+    <menuitem name="Aniadir una compañia" id="odoo704.menu_compania_list" parent="odoo704.menu_compania"
+              action="odoo704.compania_action_window"/>
+
+
+
+  </data>
+</odoo>
